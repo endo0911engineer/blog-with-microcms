@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export default function Details({params}) {
     const [blogs, setBlogs] = useState([]);
 
+    //ブログidで紐づけられたブログ記事を取得する
     useEffect(() => {
       const fetchData = async() => {
           const response =await client.get({

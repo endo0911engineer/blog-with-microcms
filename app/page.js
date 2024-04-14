@@ -28,6 +28,8 @@ export default function Home() {
     fetchData();
   }, []);
 
+
+  //検索バーに入力された内容を保持する
   const handleSearch = (e) => {
     setSearchQuery(e.currentTarget.value);
   }
@@ -49,9 +51,7 @@ export default function Home() {
 
   //pagenationの実装
   const itemsPerPage = 5;
-
   const [itemsOffset, setItemsOffset] = useState(0);
-
   const endOffset = itemsOffset + itemsPerPage;
   const currentFilterList = filterList.slice(itemsOffset, endOffset);
   const pageCount = Math.ceil(blogs.length / itemsPerPage);
@@ -84,7 +84,7 @@ export default function Home() {
             </li>
             )}
           </ul>
-          </div>
+      </div>
       )}
 
       <div className={styles.paginationContainer}>
